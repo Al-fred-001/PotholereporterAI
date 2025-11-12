@@ -5,66 +5,102 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="8dp"
-    android:layout_marginTop="4dp"
+    android:layout_marginTop="6dp"
     android:layout_marginEnd="8dp"
-    android:layout_marginBottom="4dp"
-    app:cardCornerRadius="8dp"
-    app:cardElevation="2dp">
+    android:layout_marginBottom="6dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="12dp">
+        android:padding="16dp">
 
-        <ImageView
+        <!-- Thumbnail Image -->
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/image_thumbnail"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:scaleType="centerCrop"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Medium"
             tools:src="@tools:sample/avatars"
             android:contentDescription="@string/pothole_photo_thumbnail" />
 
+        <!-- PRIORITY SCORE (0-100) -->
         <TextView
-            android:id="@+id/text_item_severity"
-            android:layout_width="0dp"
+            android:id="@+id/text_item_priority"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:textColor="@color/design_default_color_primary"
-            android:textSize="22sp"
+            android:textColor="@color/design_default_color_primary_dark"
+            android:textSize="26sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/image_thumbnail"
             app:layout_constraintTop_toTopOf="@id/image_thumbnail"
-            tools:text="Severity: 8.5 / 10" />
+            tools:text="93" />
 
+        <TextView
+            android:id="@+id/text_item_priority_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="@string/score_label_priority"
+            android:textColor="@color/design_default_color_primary"
+            android:textSize="16sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/text_item_priority"
+            app:layout_constraintStart_toEndOf="@id/text_item_priority" />
+
+        <!-- Secondary Metrics -->
+        <TextView
+            android:id="@+id/text_item_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="16dp"
+            android:textSize="14sp"
+            android:textColor="#555555"
+            app:layout_constraintStart_toEndOf="@id/image_thumbnail"
+            app:layout_constraintTop_toBottomOf="@id/text_item_priority"
+            tools:text="Size Norm: 0.85" />
+
+        <TextView
+            android:id="@+id/text_item_traffic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:textSize="14sp"
+            android:textColor="#555555"
+            app:layout_constraintStart_toEndOf="@id/text_item_size"
+            app:layout_constraintTop_toTopOf="@id/text_item_size"
+            tools:text="Traffic: 4/min" />
+
+        <!-- Metadata  -->
         <TextView
             android:id="@+id/text_item_date"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:layout_marginStart="16dp"
-            android:textSize="14sp"
-            android:textColor="#555555"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:textSize="12sp"
+            android:textColor="#777777"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/image_thumbnail"
-            app:layout_constraintTop_toBottomOf="@id/text_item_severity"
-            tools:text="Oct 28, 2023 (14:30)" />
+            app:layout_constraintStart_toStartOf="@id/image_thumbnail"
+            app:layout_constraintTop_toBottomOf="@id/image_thumbnail"
+            tools:text="Reported: Aug 15, 2025 | Type: Arterial" />
 
         <TextView
             android:id="@+id/text_item_location"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
-            android:layout_marginStart="16dp"
             android:textSize="12sp"
             android:textColor="#777777"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/image_thumbnail"
+            app:layout_constraintStart_toStartOf="@id/image_thumbnail"
             app:layout_constraintTop_toBottomOf="@id/text_item_date"
-            tools:text="Lat: 34.05, Lon: -118.24" />
+            tools:text="Location: Lat: 34.05, Lon: -118.24" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

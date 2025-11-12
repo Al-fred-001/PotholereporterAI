@@ -5,14 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    android:padding="16dp"
+    android:padding="20dp"
     tools:context=".ui.MainActivity">
 
+    <!-- App Title -->
     <TextView
         android:id="@+id/text_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:text="@string/app_name"
         android:textAlignment="center"
         android:textColor="@color/black"
@@ -22,12 +23,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Priority Score Display Area -->
     <TextView
-        android:id="@+id/text_severity_label"
+        android:id="@+id/text_priority_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:text="Severity Score"
+        android:layout_marginTop="40dp"
+        android:text="@string/label_priority_score"
         android:textSize="18sp"
         android:textColor="#333333"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,44 +40,60 @@
         android:id="@+id/text_severity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/severity_default"
+        android:layout_marginTop="4dp"
+        android:text="@string/priority_default"
         android:textColor="@color/design_default_color_primary"
-        android:textSize="52sp"
+        android:textSize="64sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_severity_label" />
+        app:layout_constraintTop_toBottomOf="@id/text_priority_label" />
 
+    <!-- Optional Input Area Placeholder (for road type/hint in future sprints) -->
+    <LinearLayout
+        android:id="@+id/input_placeholder"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_severity">
+        <!-- Future Dropdown/Input components will go here -->
+    </LinearLayout>
+
+    <!-- Action Buttons -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_capture_upload"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
-        android:padding="15dp"
+        android:padding="16dp"
         android:text="@string/btn_capture_upload"
         android:textColor="@android:color/white"
         android:textSize="16sp"
         app:backgroundTint="#FF9800"
-        app:cornerRadius="8dp"
+        app:cornerRadius="10dp"
         app:icon="@drawable/ic_camera_alt"
         app:iconGravity="textStart"
         app:iconTint="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_severity" />
+        app:layout_constraintTop_toBottomOf="@id/input_placeholder" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_analyze"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:padding="15dp"
+        android:padding="16dp"
         android:text="@string/btn_analyze"
         android:textColor="@android:color/white"
         android:textSize="16sp"
         app:backgroundTint="@color/design_default_color_primary"
-        app:cornerRadius="8dp"
+        app:cornerRadius="10dp"
         app:icon="@drawable/ic_search"
         app:iconGravity="textStart"
         app:iconTint="@android:color/white"
@@ -90,7 +108,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="@string/btn_view_reports"
-        android:textColor="@color/design_default_color_primary"
+        android:textColor="@color/design_default_color_primary_dark"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

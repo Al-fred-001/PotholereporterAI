@@ -2,14 +2,23 @@
 <resources>
     <string name="app_name">Pothole Reporter AI</string>
 
-    <string name="severity_default">-- / 10</string>
-    <string name="severity_analyzing">ANALYZING...</string>
-    <string name="severity_score_format">Severity: %.1f / 10</string>
-    <string name="severity_score_format_list">Severity: %.1f / 10</string>
+    <!-- Main Activity Strings -->
+    <string name="label_priority_score">Priority Score (0-100)</string>
+    <string name="priority_default">--</string>
+    <string name="priority_analyzing">ANALYZING...</string>
+    <string name="priority_score_format">%s</string> <!-- Displays the raw score, e.g., 93 -->
+
     <string name="btn_capture_upload">📸 Capture / Upload Photo</string>
     <string name="btn_analyze">🔍 Analyze and Report</string>
     <string name="btn_view_reports">📋 View Reports</string>
     <string name="fab_back_description">Back to main screen or add new report</string>
     <string name="pothole_photo_thumbnail">Pothole photo thumbnail</string>
+
+    <!-- Reports List Strings -->
+    <string name="score_label_priority">PRIORITY</string>
+    <string name="label_size_norm">Size Norm: %s</string> <!-- e.g., 0.85 -->
+    <string name="label_traffic_rate">Traffic: %s /min</string> <!-- e.g., 4 /min -->
+    <string name="date_road_type_format">Reported: %s | Type: %s</string>
+    <string name="location_format">Location: Lat: %s, Lon: %s</string>
 
 </resources>
