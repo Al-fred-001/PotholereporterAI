@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pothole Reporter AI</string>
+
+    <string name="severity_default">-- / 10</string>
+    <string name="severity_analyzing">ANALYZING...</string>
+    <string name="severity_score_format">Severity: %.1f / 10</string>
+    <string name="severity_score_format_list">Severity: %.1f / 10</string>
+    <string name="btn_capture_upload">📸 Capture / Upload Photo</string>
+    <string name="btn_analyze">🔍 Analyze and Report</string>
+    <string name="btn_view_reports">📋 View Reports</string>
+    <string name="fab_back_description">Back to main screen or add new report</string>
+    <string name="pothole_photo_thumbnail">Pothole photo thumbnail</string>
+
+</resources>
